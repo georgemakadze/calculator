@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Calc" customModuleProvider="target" colorLabel="IBBuiltInLabel-Red" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="h38-f9-MYd">
+                                <rect key="frame" x="0.0" y="182" width="390" height="628"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P01-UB-RV3">
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="128"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tdH-bC-0Ak">
+                                                <rect key="frame" x="10" y="0.0" width="370" height="128"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="100"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="tdH-bC-0Ak" secondAttribute="trailing" constant="10" id="Bj7-dD-0hg"/>
+                                            <constraint firstAttribute="bottom" secondItem="tdH-bC-0Ak" secondAttribute="bottom" id="hR4-Lk-nAf"/>
+                                            <constraint firstItem="tdH-bC-0Ak" firstAttribute="top" secondItem="P01-UB-RV3" secondAttribute="top" id="hhU-v9-T42"/>
+                                            <constraint firstItem="tdH-bC-0Ak" firstAttribute="leading" secondItem="P01-UB-RV3" secondAttribute="leading" constant="10" id="mZ0-tF-k3P"/>
+                                        </constraints>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Ecz-TL-Bpm">
+                                        <rect key="frame" x="0.0" y="138" width="390" height="90"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2nG-Bv-Ad6">
+                                                <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                                                <color key="backgroundColor" systemColor="linkColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="2nG-Bv-Ad6" secondAttribute="height" multiplier="1:1" id="TGk-HW-e7J"/>
+                                                </constraints>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="AC">
+                                                    <color key="titleColor" systemColor="labelColor"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tSf-jm-nyQ">
+                                                <rect key="frame" x="100" y="0.0" width="90" height="90"/>
+                                                <color key="backgroundColor" systemColor="linkColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="tSf-jm-nyQ" secondAttribute="height" multiplier="1:1" id="WBd-NH-uZU"/>
+                                                </constraints>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal">
+                                                    <string key="title">⁺∕₋
+</string>
+                                                    <color key="titleColor" systemColor="labelColor"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IfS-hA-d4e">
+                                                <rect key="frame" x="200" y="0.0" width="90" height="90"/>
+                                                <color key="backgroundColor" systemColor="linkColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="IfS-hA-d4e" secondAttribute="height" multiplier="1:1" id="t4U-o2-7wo"/>
+                                                </constraints>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="%">
+                                                    <color key="titleColor" systemColor="labelColor"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A3B-bt-f3G">
+                                                <rect key="frame" x="300" y="0.0" width="90" height="90"/>
+                                                <color key="backgroundColor" systemColor="linkColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="A3B-bt-f3G" secondAttribute="height" multiplier="1:1" id="CjT-3W-YPA"/>
+                                                </constraints>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="÷">
+                                                    <color key="titleColor" systemColor="labelColor"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="IfS-hA-d4e" firstAttribute="width" secondItem="IfS-hA-d4e" secondAttribute="height" multiplier="1:1" id="K5a-RS-c3H"/>
+                                            <constraint firstItem="tSf-jm-nyQ" firstAttribute="width" secondItem="tSf-jm-nyQ" secondAttribute="height" multiplier="1:1" id="e5p-FO-nez"/>
+                                            <constraint firstItem="A3B-bt-f3G" firstAttribute="width" secondItem="A3B-bt-f3G" secondAttribute="height" multiplier="1:1" id="voZ-zf-xrI"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="AFr-23-cpS">
+                                        <rect key="frame" x="0.0" y="238" width="390" height="90"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hsi-fy-GDD">
+                                                <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                                                <color key="backgroundColor" systemColor="linkColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="Hsi-fy-GDD" secondAttribute="height" multiplier="1:1" id="i4G-ec-OE3"/>
+                                                </constraints>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="7">
+                                                    <color key="titleColor" systemColor="labelColor"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="idy-4Z-ssx">
+                                                <rect key="frame" x="100" y="0.0" width="90" height="90"/>
+                                                <color key="backgroundColor" systemColor="linkColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="idy-4Z-ssx" secondAttribute="height" multiplier="1:1" id="pz6-P4-laB"/>
+                                                </constraints>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="8">
+                                                    <color key="titleColor" systemColor="labelColor"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l08-Db-yEG">
+                                                <rect key="frame" x="200" y="0.0" width="90" height="90"/>
+                                                <color key="backgroundColor" systemColor="linkColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="l08-Db-yEG" secondAttribute="height" multiplier="1:1" id="GuI-zu-0Yp"/>
+                                                </constraints>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="9">
+                                                    <color key="titleColor" systemColor="labelColor"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7vy-b3-6aa">
+                                                <rect key="frame" x="300" y="0.0" width="90" height="90"/>
+                                                <color key="backgroundColor" systemColor="linkColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="7vy-b3-6aa" secondAttribute="height" multiplier="1:1" id="ePT-dA-hWR"/>
+                                                </constraints>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="X">
+                                                    <color key="titleColor" systemColor="labelColor"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="7vy-b3-6aa" firstAttribute="width" secondItem="7vy-b3-6aa" secondAttribute="height" multiplier="1:1" id="1xD-FG-Tad"/>
+                                            <constraint firstItem="idy-4Z-ssx" firstAttribute="width" secondItem="idy-4Z-ssx" secondAttribute="height" multiplier="1:1" id="JRH-g9-6Dk"/>
+                                            <constraint firstItem="l08-Db-yEG" firstAttribute="width" secondItem="l08-Db-yEG" secondAttribute="height" multiplier="1:1" id="MDd-Nc-asB"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="i8g-bt-hVN">
+                                        <rect key="frame" x="0.0" y="338" width="390" height="90"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hRQ-da-hxq">
+                                                <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                                                <color key="backgroundColor" systemColor="linkColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="hRQ-da-hxq" secondAttribute="height" multiplier="1:1" id="vbb-DG-hoi"/>
+                                                </constraints>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="4">
+                                                    <color key="titleColor" systemColor="labelColor"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LCy-Xq-YC8">
+                                                <rect key="frame" x="100" y="0.0" width="90" height="90"/>
+                                                <color key="backgroundColor" systemColor="linkColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="LCy-Xq-YC8" secondAttribute="height" multiplier="1:1" id="uMi-pi-78o"/>
+                                                </constraints>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="5">
+                                                    <color key="titleColor" systemColor="labelColor"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4uz-id-CDU">
+                                                <rect key="frame" x="200" y="0.0" width="90" height="90"/>
+                                                <color key="backgroundColor" systemColor="linkColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="4uz-id-CDU" secondAttribute="height" multiplier="1:1" id="5ag-tQ-jeV"/>
+                                                </constraints>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="6">
+                                                    <color key="titleColor" systemColor="labelColor"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L4O-L4-aga">
+                                                <rect key="frame" x="300" y="0.0" width="90" height="90"/>
+                                                <color key="backgroundColor" systemColor="linkColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="L4O-L4-aga" secondAttribute="height" multiplier="1:1" id="1Ua-fb-OC0"/>
+                                                </constraints>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="-">
+                                                    <color key="titleColor" systemColor="labelColor"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="L4O-L4-aga" firstAttribute="width" secondItem="L4O-L4-aga" secondAttribute="height" multiplier="1:1" id="MHI-dF-YNB"/>
+                                            <constraint firstItem="LCy-Xq-YC8" firstAttribute="width" secondItem="LCy-Xq-YC8" secondAttribute="height" multiplier="1:1" id="N9b-5o-xcO"/>
+                                            <constraint firstItem="4uz-id-CDU" firstAttribute="width" secondItem="4uz-id-CDU" secondAttribute="height" multiplier="1:1" id="elu-er-ntv"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="mOB-sm-NJF">
+                                        <rect key="frame" x="0.0" y="438" width="390" height="90"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c3d-L1-ndg">
+                                                <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                                                <color key="backgroundColor" systemColor="linkColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="c3d-L1-ndg" secondAttribute="height" multiplier="1:1" id="Dlq-ci-jnW"/>
+                                                </constraints>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="1">
+                                                    <color key="titleColor" systemColor="labelColor"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sQE-MD-Q0M">
+                                                <rect key="frame" x="100" y="0.0" width="90" height="90"/>
+                                                <color key="backgroundColor" systemColor="linkColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="sQE-MD-Q0M" secondAttribute="height" multiplier="1:1" id="gJ3-tw-EP5"/>
+                                                </constraints>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="2">
+                                                    <color key="titleColor" systemColor="labelColor"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q9C-0Q-iiw">
+                                                <rect key="frame" x="200" y="0.0" width="90" height="90"/>
+                                                <color key="backgroundColor" systemColor="linkColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="Q9C-0Q-iiw" secondAttribute="height" multiplier="1:1" id="LyI-7M-kus"/>
+                                                </constraints>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="3">
+                                                    <color key="titleColor" systemColor="labelColor"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pjm-1I-j88">
+                                                <rect key="frame" x="300" y="0.0" width="90" height="90"/>
+                                                <color key="backgroundColor" systemColor="linkColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="pjm-1I-j88" secondAttribute="height" multiplier="1:1" id="uF5-66-yeS"/>
+                                                </constraints>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="+">
+                                                    <color key="titleColor" systemColor="labelColor"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="sQE-MD-Q0M" firstAttribute="width" secondItem="sQE-MD-Q0M" secondAttribute="height" multiplier="1:1" id="0PQ-Vi-moI"/>
+                                            <constraint firstItem="pjm-1I-j88" firstAttribute="width" secondItem="pjm-1I-j88" secondAttribute="height" multiplier="1:1" id="DlP-mV-Ui5"/>
+                                            <constraint firstItem="Q9C-0Q-iiw" firstAttribute="width" secondItem="Q9C-0Q-iiw" secondAttribute="height" multiplier="1:1" id="e9Y-PT-SkO"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="aPi-Sw-PWH">
+                                        <rect key="frame" x="0.0" y="538" width="390" height="90"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SCz-8D-Hzo">
+                                                <rect key="frame" x="0.0" y="0.0" width="189.66666666666666" height="90"/>
+                                                <color key="backgroundColor" systemColor="linkColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="SCz-8D-Hzo" secondAttribute="height" multiplier="2:0.95" id="UID-kY-wGd"/>
+                                                </constraints>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="0">
+                                                    <color key="titleColor" systemColor="labelColor"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NNG-qa-wN0">
+                                                <rect key="frame" x="199.66666666666666" y="0.0" width="90.333333333333343" height="90"/>
+                                                <color key="backgroundColor" systemColor="linkColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="NNG-qa-wN0" secondAttribute="height" multiplier="1:1" id="fDl-TF-W7P"/>
+                                                </constraints>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title=".">
+                                                    <color key="titleColor" systemColor="labelColor"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DPD-pj-3Cl">
+                                                <rect key="frame" x="300" y="0.0" width="90" height="90"/>
+                                                <color key="backgroundColor" systemColor="linkColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="DPD-pj-3Cl" secondAttribute="height" multiplier="1:1" id="TMg-eR-s0H"/>
+                                                </constraints>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="=">
+                                                    <color key="titleColor" systemColor="labelColor"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="NNG-qa-wN0" firstAttribute="width" secondItem="NNG-qa-wN0" secondAttribute="height" multiplier="1:1" id="1lD-v7-8Bz"/>
+                                            <constraint firstItem="SCz-8D-Hzo" firstAttribute="width" secondItem="SCz-8D-Hzo" secondAttribute="height" multiplier="2:0.95" id="9pU-pE-Rz2"/>
+                                            <constraint firstItem="DPD-pj-3Cl" firstAttribute="width" secondItem="DPD-pj-3Cl" secondAttribute="height" multiplier="1:1" id="e03-PZ-5Fm"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemMintColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="h38-f9-MYd" secondAttribute="bottom" id="AjX-5S-k2h"/>
+                            <constraint firstItem="h38-f9-MYd" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="bLe-qa-Vax"/>
+                            <constraint firstItem="h38-f9-MYd" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="fJI-88-IlC"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="addButton" destination="pjm-1I-j88" id="JiK-yp-9f7"/>
+                        <outlet property="clerButton" destination="2nG-Bv-Ad6" id="nuU-81-138"/>
+                        <outlet property="decimalButton" destination="NNG-qa-wN0" id="SYb-5t-Iw6"/>
+                        <outlet property="displayLabel" destination="tdH-bC-0Ak" id="uGT-PQ-QgH"/>
+                        <outlet property="divadeButton" destination="A3B-bt-f3G" id="cGC-h6-qkC"/>
+                        <outlet property="equalsButton" destination="DPD-pj-3Cl" id="gKA-9r-BfV"/>
+                        <outlet property="lcdDisplay" destination="P01-UB-RV3" id="EXL-D4-muS"/>
+                        <outlet property="minusButton" destination="L4O-L4-aga" id="Yzd-gz-nfR"/>
+                        <outlet property="multiplyButton" destination="7vy-b3-6aa" id="RP6-wa-2o9"/>
+                        <outlet property="negateButton" destination="tSf-jm-nyQ" id="TC6-lk-KtD"/>
+                        <outlet property="persentageButton" destination="IfS-hA-d4e" id="MwE-1w-ciW"/>
+                        <outlet property="pinpadButton0" destination="SCz-8D-Hzo" id="7EW-9Y-3kR"/>
+                        <outlet property="pinpadButton1" destination="c3d-L1-ndg" id="te7-O5-16h"/>
+                        <outlet property="pinpadButton2" destination="sQE-MD-Q0M" id="e6u-4R-7pL"/>
+                        <outlet property="pinpadButton3" destination="Q9C-0Q-iiw" id="FRa-5M-wmI"/>
+                        <outlet property="pinpadButton4" destination="hRQ-da-hxq" id="H3s-nO-iSs"/>
+                        <outlet property="pinpadButton5" destination="LCy-Xq-YC8" id="xiy-qc-59C"/>
+                        <outlet property="pinpadButton6" destination="4uz-id-CDU" id="COq-58-EUK"/>
+                        <outlet property="pinpadButton7" destination="Hsi-fy-GDD" id="js9-L9-wYQ"/>
+                        <outlet property="pinpadButton8" destination="idy-4Z-ssx" id="3Vc-hq-MwZ"/>
+                        <outlet property="pinpadButton9" destination="l08-Db-yEG" id="5jH-xz-tSZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="47.692307692307693" y="-2.1327014218009479"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemMintColor">
+            <color red="0.0" green="0.7803921568627451" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
