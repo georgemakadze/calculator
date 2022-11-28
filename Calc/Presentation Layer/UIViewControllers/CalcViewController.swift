@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  CalcViewController.swift
 //  Calc
 //
 //  Created by Giorgi Makadze on 16.11.2022.
@@ -8,8 +8,8 @@
 import UIKit
 
 
-
-class ViewController: UIViewController {
+      // MARK: - IBOutlets
+class CalcViewController: UIViewController {
     @IBOutlet weak var lcdDisplay: UIView!
     @IBOutlet weak var displayLabel: UILabel!
     
@@ -37,15 +37,23 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var decimalButton: UIButton!
     
+    // MARK: - Color Themes
+    
     var currentTheme: CalculatorTheme {
         return CalculatorTheme(backgroundColor: "#000000", displayColor: "#FFFFFF", extraFunctionColor: "#a6a6a6", extraFunctionTitleColor: "#FFFFFF", operationColor: "#ff9f0a", operationTitleColor: "#FFFFFF", pinpadColor: "#333333", pinpadTitleColor: "#FFFFFF")
     }
-
+    // MARK: - Calculator Engine
+    
+    private var calculatorEngine = CalculatorEngine()
+    // MARK: - Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         decorateView()
     }
+    
+    // MARK: - Decorate
     
     private func decorateView () {
         
@@ -115,7 +123,66 @@ class ViewController: UIViewController {
         button.titleLabel?.font = UIFont.systemFont(ofSize: 30)
     }
     
-
-
+    // MARK: - IBAction
+    
+    @IBAction private func clearPressed() {
+        calculatorEngine.clearPressed()
+        refreshLCDDisplay()
+    }
+    
+    @IBAction private func negatePressed() {
+        calculatorEngine.negatePressed()
+        refreshLCDDisplay()
+    }
+    
+    @IBAction private func percentagePressed() {
+        calculatorEngine.percentagePressed()
+        refreshLCDDisplay()
+    }
+    
+    // MARK: - Operation
+    
+    @IBAction private func addPressed() {
+        calculatorEngine.addPressed()
+        refreshLCDDisplay()
+    }
+    
+    @IBAction private func minusPressed() {
+        calculatorEngine.minusPressed()
+        refreshLCDDisplay()
+    }
+    
+    @IBAction private func multiplyPressed() {
+        calculatorEngine.multiplyPressed()
+        refreshLCDDisplay()
+    }
+    
+    @IBAction private func dividePressed() {
+        calculatorEngine.dividePressed()
+        refreshLCDDisplay()
+    }
+    
+    @IBAction private func equalsPressed() {
+        calculatorEngine.equalsPressed()
+        refreshLCDDisplay()
+    }
+    
+    // MARK: - Number Input
+    
+    @IBAction private func decimalPressed() {
+        calculatorEngine.decimalPressed()
+        refreshLCDDisplay()
+    }
+    
+    @IBAction private func numberPressed(_ sender: UIButton) {
+        let number = sender.tag
+        calculatorEngine.numberPressed(number)
+        refreshLCDDisplay()
+    }
+    // MARK: - Refrec LCDDislay
+    
+    private func refreshLCDDisplay() {
+        displayLabel.text = calculatorEngine.lcdDisplayText
+    }
 }
 
