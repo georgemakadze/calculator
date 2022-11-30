@@ -92,18 +92,38 @@ struct MathInputController {
     }
     
     mutating func numberPressed(_ number: Int) {
+        guard number >= -9, number <= 9 else { return }
         
-        let decimalValue = Decimal(number)
-        lcdDisplayText = decimalValue.formatted()
+        
         
         switch operendSide {
         case .leftHandSide:
-            mathEquation.lhs = decimalValue
+            let tuple = appendNewNumber(number, toPreviousInput: mathEquation.lhs)
+            mathEquation.lhs = tuple.newNumber
+            lcdDisplayText = tuple.newLcdDisplayText
         case .rightHandSide:
-            mathEquation.rhs = decimalValue
+            let tuple = appendNewNumber(number, toPreviousInput: mathEquation.rhs ?? .zero)
+            mathEquation.rhs = tuple.newNumber
+            lcdDisplayText = tuple.newLcdDisplayText
         }
         
     }
     
+    private func appendNewNumber(_ number: Int, toPreviousInput previusInput: Decimal) -> (newNumber: Decimal, newLcdDisplayText: String) {
+        let stringInput = String(number)
+        var newStringRepresentation = previusInput.isZero ? "" : lcdDisplayText
+        newStringRepresentation.append(stringInput)
+        
+        let formatter = NumberFormatter()
+        formatter.generatesDecimalNumbers = true
+        formatter.numberStyle = .decimal
+        guard let convertedNumber = formatter.number(from: newStringRepresentation) else { return (.nan, "Error")}
+        
+        let newNumber = convertedNumber.decimalValue
+        let newLCDDisplayText = newStringRepresentation
+        return (newNumber, newLCDDisplayText)
+        
+        
+    }
    
 }
