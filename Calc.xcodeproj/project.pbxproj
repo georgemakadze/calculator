@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E76BC3829374F76008F179A /* MathInputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E76BC3729374F76008F179A /* MathInputController.swift */; };
 		0EBF4CDA29349CF100E2B79B /* CalculatorEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBF4CD929349CF100E2B79B /* CalculatorEngine.swift */; };
 		0EBF4E192924D4A60094FD16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBF4E182924D4A60094FD16 /* AppDelegate.swift */; };
 		0EBF4E1B2924D4A60094FD16 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBF4E1A2924D4A60094FD16 /* SceneDelegate.swift */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0E76BC3729374F76008F179A /* MathInputController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathInputController.swift; sourceTree = "<group>"; };
 		0EBF4CD929349CF100E2B79B /* CalculatorEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorEngine.swift; sourceTree = "<group>"; };
 		0EBF4E152924D4A60094FD16 /* Calc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EBF4E182924D4A60094FD16 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				0EBF4CD929349CF100E2B79B /* CalculatorEngine.swift */,
+				0E76BC3729374F76008F179A /* MathInputController.swift */,
 			);
 			path = "Busines Logic Layer";
 			sourceTree = "<group>";
@@ -306,6 +309,7 @@
 			files = (
 				0EBF4E4B2930B9530094FD16 /* UIColor+HexValue.swift in Sources */,
 				0EBF4E4D293100C50094FD16 /* MathEquation.swift in Sources */,
+				0E76BC3829374F76008F179A /* MathInputController.swift in Sources */,
 				0EBF4E1D2924D4A60094FD16 /* CalcViewController.swift in Sources */,
 				0EBF4E492930B3250094FD16 /* CalculatorTheme.swift in Sources */,
 				0EBF4E192924D4A60094FD16 /* AppDelegate.swift in Sources */,

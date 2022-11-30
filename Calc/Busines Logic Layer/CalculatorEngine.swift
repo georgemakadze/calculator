@@ -32,95 +32,82 @@ import Foundation
 
 struct CalculatorEngine {
     
-    enum OperendSide {
-        case leftHandSide
-        case rightHandSide
-    }
+    // MARK: - Input Controller
+    
+    private var inputController = MathInputController()
+    
+    // MARK: - Equation History
+    
+    private var historyLog: [MathEquation] = []
+    
     // MARK: - LCD Display
     
-    var lcdDisplayText = ""
-    
-    
-    // MARK: - Math Equation
-    
-    private var mathEquation = MathEquation(lhs: .zero)
-    private var operendSide = OperendSide.leftHandSide
+    var lcdDisplayText: String  {
+        return inputController.lcdDisplayText
+    }
     
     // MARK: - Extra Functions
     
     mutating func clearPressed() {
-        mathEquation = MathEquation(lhs: .zero)
-        lcdDisplayText = mathEquation.lhs.formatted()
-        operendSide = .leftHandSide
+        inputController = MathInputController()
+        
     }
     
     mutating func negatePressed() {
-        switch operendSide {
-        case .leftHandSide:
-            mathEquation.negateLeftHandSide()
-            lcdDisplayText = mathEquation.lhs.formatted()
-        case .rightHandSide:
-            mathEquation.negateRightHandSide()
-            lcdDisplayText = mathEquation.rhs?.formatted() ?? "Error"
-            
-        }
+        inputController.negatePressed()
     }
     
     mutating func percentagePressed() {
-        switch operendSide {
-        case .leftHandSide:
-            mathEquation.applyPercentageToLeftHandSide()
-            lcdDisplayText = mathEquation.lhs.formatted()
-        case .rightHandSide:
-            mathEquation.applyPercentageToRightHandSide()
-            lcdDisplayText = mathEquation.rhs?.formatted() ?? "Error"
-        }
+        inputController.percentagePressed()
     }
     
     // MARK: - Operations
     
     mutating func addPressed() {
-        mathEquation.operation = .add
-        operendSide = .rightHandSide
+        inputController.addPressed()
     }
     
     mutating func minusPressed() {
-        mathEquation.operation = .subtract
-        operendSide = .rightHandSide
+        inputController.minusPressed()
     }
     
     mutating func multiplyPressed() {
-        mathEquation.operation = .multiply
-        operendSide = .rightHandSide
+        inputController.multiplyPressed()
     }
     
     mutating func dividePressed() {
-        mathEquation.operation = .divide
-        operendSide = .rightHandSide
+        inputController.dividePressed()
     }
     
     mutating func equalsPressed() {
-        mathEquation.execute()
-        lcdDisplayText = mathEquation.result?.formatted() ?? "Error"
+        inputController.execute()
+        historyLog.append(inputController.mathEquation)
+        printEquationToDebugConsole()
+        
     }
     
     // MARK: - Number Input
     
     mutating func decimalPressed() {
-        
+        inputController.decimalPressed()
     }
     
     mutating func numberPressed(_ number: Int) {
-        
-        let decimalValue = Decimal(number)
-        lcdDisplayText = decimalValue.formatted()
-        
-        switch operendSide {
-        case .leftHandSide:
-            mathEquation.lhs = decimalValue
-        case .rightHandSide:
-            mathEquation.rhs = decimalValue
-        }
-        
+        inputController.numberPressed(number)
+    }
+    
+    //MARK: - Debug Console
+    
+    private func printEquationToDebugConsole() {
+        print("Equation: " + inputController.mathEquation.generatePrintout())
+    }
+    
+    // MARK: - History Log
+    
+    private mutating func clearHistory() {
+        historyLog = []
     }
 }
+
+
+
