@@ -39,12 +39,23 @@ class CalcViewController: UIViewController {
     
     // MARK: - Color Themes
     
-    var currentTheme: CalculatorTheme {
-        return CalculatorTheme(backgroundColor: "#000000", displayColor: "#FFFFFF", extraFunctionColor: "#a6a6a6", extraFunctionTitleColor: "#FFFFFF", operationColor: "#ff9f0a", operationTitleColor: "#FFFFFF", pinpadColor: "#333333", pinpadTitleColor: "#FFFFFF")
+    /*
+     gray:       #a6a6a6
+     dark gray:  #333333
+     orange:     #ff9f0a
+     purple:     #7550FE
+     */
+    
+    private var currentTheme: CalculatorTheme {
+        return orangeTheme
     }
+    
+    
     // MARK: - Calculator Engine
     
     private var calculatorEngine = CalculatorEngine()
+    
+    
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
@@ -63,7 +74,16 @@ class CalcViewController: UIViewController {
         displayLabel.textColor = UIColor(hex: currentTheme.displayColor)
         displayLabel.backgroundColor = UIColor(hex: currentTheme.backgroundColor)
         
+        setNeedsStatusBarAppearanceUpdate()
+        
         decorateButton()
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        switch currentTheme.statusBarStyle {
+        case .light: return .lightContent
+        case .dark: return .darkContent
+        }
     }
     
     private func decorateButton() {
@@ -104,7 +124,7 @@ class CalcViewController: UIViewController {
         
         button.tintColor = UIColor(hex: currentTheme.extraFunctionColor)
         button.setTitleColor(UIColor(hex: currentTheme.extraFunctionTitleColor), for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 40)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 30)
     }
     
     private func decorateOperationButton(_ button: UIButton) {
