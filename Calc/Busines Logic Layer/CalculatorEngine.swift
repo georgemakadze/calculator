@@ -54,32 +54,46 @@ struct CalculatorEngine {
     }
     
     mutating func negatePressed() {
+        guard inputController.isCompleted == false else { return }
+        
         inputController.negatePressed()
     }
     
     mutating func percentagePressed() {
+        guard inputController.isCompleted == false else { return }
+        
         inputController.percentagePressed()
     }
     
     // MARK: - Operations
     
     mutating func addPressed() {
+        guard inputController.isCompleted == false else { return }
+        
         inputController.addPressed()
     }
     
     mutating func minusPressed() {
+        guard inputController.isCompleted == false else { return }
+        
         inputController.minusPressed()
     }
     
     mutating func multiplyPressed() {
+        guard inputController.isCompleted == false else { return }
+        
         inputController.multiplyPressed()
     }
     
     mutating func dividePressed() {
+        guard inputController.isCompleted == false else { return }
+        
         inputController.dividePressed()
     }
     
     mutating func equalsPressed() {
+        guard inputController.isCompleted == false else { return }
+        
         inputController.execute()
         historyLog.append(inputController.mathEquation)
         printEquationToDebugConsole()
