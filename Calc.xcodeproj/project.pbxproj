@@ -19,6 +19,7 @@
 		0E76BC4D2938D612008F179A /* purpleTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E76BC432938D611008F179A /* purpleTheme.swift */; };
 		0E76BC4E2938D612008F179A /* lightTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E76BC442938D611008F179A /* lightTheme.swift */; };
 		0E76BC4F2938D612008F179A /* electroTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E76BC452938D612008F179A /* electroTheme.swift */; };
+		0E76BC522939DF18008F179A /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E76BC512939DF18008F179A /* ThemeManager.swift */; };
 		0EBF4CDA29349CF100E2B79B /* CalculatorEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBF4CD929349CF100E2B79B /* CalculatorEngine.swift */; };
 		0EBF4E192924D4A60094FD16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBF4E182924D4A60094FD16 /* AppDelegate.swift */; };
 		0EBF4E1B2924D4A60094FD16 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBF4E1A2924D4A60094FD16 /* SceneDelegate.swift */; };
@@ -62,6 +63,7 @@
 		0E76BC432938D611008F179A /* purpleTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = purpleTheme.swift; sourceTree = "<group>"; };
 		0E76BC442938D611008F179A /* lightTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = lightTheme.swift; sourceTree = "<group>"; };
 		0E76BC452938D612008F179A /* electroTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = electroTheme.swift; sourceTree = "<group>"; };
+		0E76BC512939DF18008F179A /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
 		0EBF4CD929349CF100E2B79B /* CalculatorEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorEngine.swift; sourceTree = "<group>"; };
 		0EBF4E152924D4A60094FD16 /* Calc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EBF4E182924D4A60094FD16 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 			children = (
 				0EBF4CD929349CF100E2B79B /* CalculatorEngine.swift */,
 				0E76BC3729374F76008F179A /* MathInputController.swift */,
+				0E76BC512939DF18008F179A /* ThemeManager.swift */,
 			);
 			path = "Busines Logic Layer";
 			sourceTree = "<group>";
@@ -363,6 +366,7 @@
 				0E76BC3A29389ADA008F179A /* String+Prefix.swift in Sources */,
 				0EBF4E492930B3250094FD16 /* CalculatorTheme.swift in Sources */,
 				0E76BC472938D612008F179A /* lightBlueTheme.swift in Sources */,
+				0E76BC522939DF18008F179A /* ThemeManager.swift in Sources */,
 				0E76BC4A2938D612008F179A /* darkBlueTheme.swift in Sources */,
 				0E76BC4F2938D612008F179A /* electroTheme.swift in Sources */,
 				0E76BC4E2938D612008F179A /* lightTheme.swift in Sources */,
