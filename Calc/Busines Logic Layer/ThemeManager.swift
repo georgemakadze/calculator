@@ -13,6 +13,10 @@ class ThemeManager {
     
     static let shared = ThemeManager()
     
+    // MARK: - Data Storage
+    
+    private var dataStore = DataStoreManager(key: "iOSBFree.com.Calc.ThemeManager.ThemeIndex")
+    
     // MARK: - Themes
     
     private var savedThemeIndex = 0
@@ -30,10 +34,27 @@ class ThemeManager {
     
     init() {
         populateArrayOfThemes()
+        restoreSavedThemeIndex()
     }
     
     private func populateArrayOfThemes() {
         theme = [darkTheme, purpleTheme, bloodOrangeTheme, darkBlueTheme, electroTheme, lightBlueTheme, lightTheme, orangeTheme, pinkTheme, washedOutTheme]
+    }
+    
+    // MARK: - Save & Restore Disk
+    
+    private func restoreSavedThemeIndex() {
+        savedThemeIndex = 0
+        
+        if let previousThemeIndex = dataStore.getValue() as? Int {
+            savedThemeIndex = previousThemeIndex
+        }
+       
+        savedTheme = theme[savedThemeIndex]
+    }
+    
+    private func saveThemeIndexToDisk() {
+        dataStore.set(savedThemeIndex)
     }
     
     // MARK: - Next Theme
@@ -46,6 +67,7 @@ class ThemeManager {
         }
         
         savedTheme = theme[savedThemeIndex]
+        saveThemeIndexToDisk()
     }
     
 }

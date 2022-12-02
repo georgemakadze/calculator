@@ -20,6 +20,7 @@
 		0E76BC4E2938D612008F179A /* lightTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E76BC442938D611008F179A /* lightTheme.swift */; };
 		0E76BC4F2938D612008F179A /* electroTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E76BC452938D612008F179A /* electroTheme.swift */; };
 		0E76BC522939DF18008F179A /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E76BC512939DF18008F179A /* ThemeManager.swift */; };
+		0E76BC54293A22A6008F179A /* DataStoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E76BC53293A22A6008F179A /* DataStoreManager.swift */; };
 		0EBF4CDA29349CF100E2B79B /* CalculatorEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBF4CD929349CF100E2B79B /* CalculatorEngine.swift */; };
 		0EBF4E192924D4A60094FD16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBF4E182924D4A60094FD16 /* AppDelegate.swift */; };
 		0EBF4E1B2924D4A60094FD16 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBF4E1A2924D4A60094FD16 /* SceneDelegate.swift */; };
@@ -64,6 +65,7 @@
 		0E76BC442938D611008F179A /* lightTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = lightTheme.swift; sourceTree = "<group>"; };
 		0E76BC452938D612008F179A /* electroTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = electroTheme.swift; sourceTree = "<group>"; };
 		0E76BC512939DF18008F179A /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
+		0E76BC53293A22A6008F179A /* DataStoreManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStoreManager.swift; sourceTree = "<group>"; };
 		0EBF4CD929349CF100E2B79B /* CalculatorEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorEngine.swift; sourceTree = "<group>"; };
 		0EBF4E152924D4A60094FD16 /* Calc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EBF4E182924D4A60094FD16 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -129,6 +131,14 @@
 				0E76BC412938D611008F179A /* washedOutTheme.swift */,
 			);
 			path = "Color Themes";
+			sourceTree = "<group>";
+		};
+		0E76BC55293A22AA008F179A /* Data Storage Layer */ = {
+			isa = PBXGroup;
+			children = (
+				0E76BC53293A22A6008F179A /* DataStoreManager.swift */,
+			);
+			path = "Data Storage Layer";
 			sourceTree = "<group>";
 		};
 		0EBF4CDB2934BB9300E2B79B /* Presentation Layer */ = {
@@ -213,6 +223,7 @@
 				0E76BC3B29389F4F008F179A /* Swift Extensions */,
 				0EBF4CDB2934BB9300E2B79B /* Presentation Layer */,
 				0EBF4CDF2934BEE800E2B79B /* Busines Logic Layer */,
+				0E76BC55293A22AA008F179A /* Data Storage Layer */,
 				0EBF4CE02934BF4200E2B79B /* Data Layer */,
 				0EBF4E212924D4A70094FD16 /* Assets.xcassets */,
 				0EBF4E262924D4A70094FD16 /* Info.plist */,
@@ -370,6 +381,7 @@
 				0E76BC4A2938D612008F179A /* darkBlueTheme.swift in Sources */,
 				0E76BC4F2938D612008F179A /* electroTheme.swift in Sources */,
 				0E76BC4E2938D612008F179A /* lightTheme.swift in Sources */,
+				0E76BC54293A22A6008F179A /* DataStoreManager.swift in Sources */,
 				0EBF4E192924D4A60094FD16 /* AppDelegate.swift in Sources */,
 				0E76BC4D2938D612008F179A /* purpleTheme.swift in Sources */,
 				0E76BC482938D612008F179A /* bloodOrangeTheme.swift in Sources */,
