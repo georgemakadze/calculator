@@ -20,11 +20,11 @@ class ThemeManager {
     // MARK: - Themes
     
     private var savedThemeIndex = 0
-    private(set) var theme: [CalculatorTheme] = []
+    private(set) var themes: [CalculatorTheme] = []
     private var savedTheme: CalculatorTheme?
     var currentTheme: CalculatorTheme {
         guard let savedTheme = savedTheme else {
-            return theme.first ?? darkTheme
+            return themes.first ?? darkTheme
         }
         
         return savedTheme
@@ -34,27 +34,34 @@ class ThemeManager {
     
     init() {
         populateArrayOfThemes()
-        restoreSavedThemeIndex()
+        restoreSavedTheme()
     }
     
     private func populateArrayOfThemes() {
-        theme = [darkTheme, purpleTheme, bloodOrangeTheme, darkBlueTheme, electroTheme, lightBlueTheme, lightTheme, orangeTheme, pinkTheme, washedOutTheme]
+        themes = [darkTheme]
     }
     
     // MARK: - Save & Restore Disk
     
-    private func restoreSavedThemeIndex() {
-        savedThemeIndex = 0
-        
-        if let previousThemeIndex = dataStore.getValue() as? Int {
-            savedThemeIndex = previousThemeIndex
+    private func restoreSavedTheme() {
+        guard let encodedTheme = dataStore.getValue() as? Data else {
+            return
         }
-       
-        savedTheme = theme[savedThemeIndex]
+        
+        let decoder = JSONDecoder()
+        if let previousTheme = try? decoder.decode(CalculatorTheme.self, from: encodedTheme) {
+            savedTheme = previousTheme
+        }
+        
     }
     
-    private func saveThemeIndexToDisk() {
-        dataStore.set(savedThemeIndex)
+    private func saveThemeToDisk(_ theme: CalculatorTheme) {
+        let encoder = JSONEncoder()
+        if let encodedTheme = try? encoder.encode(theme) {
+            
+            dataStore.set(encodedTheme)
+        }
+       
     }
     
     // MARK: - Next Theme
@@ -62,12 +69,13 @@ class ThemeManager {
     func moveToNextTheme() {
         
         savedThemeIndex = savedThemeIndex + 1
-        if savedThemeIndex > theme.count - 1 {
+        if savedThemeIndex > themes.count - 1 {
             savedThemeIndex = 0
         }
         
-        savedTheme = theme[savedThemeIndex]
-        saveThemeIndexToDisk()
+        let theme = themes[savedThemeIndex]
+        savedTheme = theme
+        saveThemeToDisk(theme)
     }
     
 }

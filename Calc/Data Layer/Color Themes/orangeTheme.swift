@@ -34,7 +34,7 @@ import Foundation
 extension ThemeManager {
     
     var orangeTheme: CalculatorTheme {
-        return CalculatorTheme(
+        return CalculatorTheme(id: "8",
             backgroundColor:                "#DC6969",
             displayColor:                   "#FFFFFF",
                                
