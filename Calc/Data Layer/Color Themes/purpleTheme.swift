@@ -34,7 +34,7 @@ import Foundation
 extension ThemeManager {
     
     var purpleTheme: CalculatorTheme {
-        return CalculatorTheme(id: "2",
+        return CalculatorTheme(id:          "7",
             backgroundColor:                "#F4F5FA",
             displayColor:                   "#1D1D1D",
                                
@@ -42,11 +42,13 @@ extension ThemeManager {
             extraFunctionTitleColor:        "#7550FE",
                                
             operationColor:                 "#7550FE",
-            operationTitleColor:            "#FFFFFF",
+            operationTitleColor:            "#ffffff",
+            operationSelectedColor:         "#4566B6",
+            operationTitleSelectedColor:    "#ffffff",
                                
             pinpadColor:                    "#1D1D1D",
-            pinpadTitleColor:               "#FFFFFF",
-            
-            statusBarStyle: .dark)
+            pinpadTitleColor:               "#ffffff",
+                               
+            statusBarStyle:                 .dark)
     }
 }

@@ -377,7 +377,7 @@
                         <outlet property="clerButton" destination="2nG-Bv-Ad6" id="nuU-81-138"/>
                         <outlet property="decimalButton" destination="NNG-qa-wN0" id="SYb-5t-Iw6"/>
                         <outlet property="displayLabel" destination="tdH-bC-0Ak" id="uGT-PQ-QgH"/>
-                        <outlet property="divadeButton" destination="A3B-bt-f3G" id="cGC-h6-qkC"/>
+                        <outlet property="divideButton" destination="A3B-bt-f3G" id="NLe-dP-8h2"/>
                         <outlet property="equalsButton" destination="DPD-pj-3Cl" id="gKA-9r-BfV"/>
                         <outlet property="lcdDisplay" destination="P01-UB-RV3" id="EXL-D4-muS"/>
                         <outlet property="minusButton" destination="L4O-L4-aga" id="Yzd-gz-nfR"/>

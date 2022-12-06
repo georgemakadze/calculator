@@ -38,7 +38,7 @@ class ThemeManager {
     }
     
     private func populateArrayOfThemes() {
-        themes = [darkTheme]
+        themes = [darkTheme, purpleTheme, bloodOrangeTheme, darkBlueTheme, electroTheme, lightBlueTheme, lightTheme, orangeTheme, pinkTheme, washedOutTheme]
     }
     
     // MARK: - Save & Restore Disk
@@ -68,12 +68,34 @@ class ThemeManager {
     
     func moveToNextTheme() {
         
-        savedThemeIndex = savedThemeIndex + 1
-        if savedThemeIndex > themes.count - 1 {
-            savedThemeIndex = 0
+        // Index of saved theme
+        let currentThemeID = currentTheme.id
+        let index: Int? = themes.firstIndex { calculatorTheme in
+            calculatorTheme.id == currentThemeID
+            
         }
         
-        let theme = themes[savedThemeIndex]
+        // Reset if something has gone wrong
+        guard let indexOfExistingTheme = index else {
+            if let firstTheme = themes.first {
+               updateSystemWithTheme(firstTheme)
+            }
+            
+            return
+        }
+        
+        // Move to the next theme
+        var nextThemeIndex = indexOfExistingTheme + 1
+        if nextThemeIndex > themes.count - 1 {
+            nextThemeIndex = 0
+        }
+        
+        // Set the theme
+        let theme = themes[nextThemeIndex]
+        updateSystemWithTheme(theme)
+    }
+    
+    private func updateSystemWithTheme(_ theme: CalculatorTheme) {
         savedTheme = theme
         saveThemeToDisk(theme)
     }
