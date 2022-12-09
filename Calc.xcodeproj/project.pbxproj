@@ -21,6 +21,7 @@
 		0E76BC67293F8677008F179A /* lightTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E76BC5D293F8677008F179A /* lightTheme.swift */; };
 		0E76BC68293F8677008F179A /* electroTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E76BC5E293F8677008F179A /* electroTheme.swift */; };
 		0E76BC69293F8677008F179A /* purpleTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E76BC5F293F8677008F179A /* purpleTheme.swift */; };
+		0E76BC6B2941F6CE008F179A /* LCDDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E76BC6A2941F6CD008F179A /* LCDDisplay.swift */; };
 		0EBF4CDA29349CF100E2B79B /* CalculatorEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBF4CD929349CF100E2B79B /* CalculatorEngine.swift */; };
 		0EBF4E192924D4A60094FD16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBF4E182924D4A60094FD16 /* AppDelegate.swift */; };
 		0EBF4E1B2924D4A60094FD16 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBF4E1A2924D4A60094FD16 /* SceneDelegate.swift */; };
@@ -66,6 +67,7 @@
 		0E76BC5D293F8677008F179A /* lightTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = lightTheme.swift; sourceTree = "<group>"; };
 		0E76BC5E293F8677008F179A /* electroTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = electroTheme.swift; sourceTree = "<group>"; };
 		0E76BC5F293F8677008F179A /* purpleTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = purpleTheme.swift; sourceTree = "<group>"; };
+		0E76BC6A2941F6CD008F179A /* LCDDisplay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LCDDisplay.swift; sourceTree = "<group>"; };
 		0EBF4CD929349CF100E2B79B /* CalculatorEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorEngine.swift; sourceTree = "<group>"; };
 		0EBF4E152924D4A60094FD16 /* Calc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EBF4E182924D4A60094FD16 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -141,9 +143,18 @@
 			path = "Data Storage Layer";
 			sourceTree = "<group>";
 		};
+		0E76BC6C29435652008F179A /* UIKit Subclasses */ = {
+			isa = PBXGroup;
+			children = (
+				0E76BC6A2941F6CD008F179A /* LCDDisplay.swift */,
+			);
+			path = "UIKit Subclasses";
+			sourceTree = "<group>";
+		};
 		0EBF4CDB2934BB9300E2B79B /* Presentation Layer */ = {
 			isa = PBXGroup;
 			children = (
+				0E76BC6C29435652008F179A /* UIKit Subclasses */,
 				0EBF4CDE2934BD4000E2B79B /* UIViewControllers */,
 				0EBF4CDC2934BC4B00E2B79B /* UIKit Extensions */,
 				0EBF4CDD2934BCBB00E2B79B /* Storyboards */,
@@ -370,6 +381,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E76BC6B2941F6CE008F179A /* LCDDisplay.swift in Sources */,
 				0EBF4E4B2930B9530094FD16 /* UIColor+HexValue.swift in Sources */,
 				0EBF4E4D293100C50094FD16 /* MathEquation.swift in Sources */,
 				0E76BC3829374F76008F179A /* MathInputController.swift in Sources */,
