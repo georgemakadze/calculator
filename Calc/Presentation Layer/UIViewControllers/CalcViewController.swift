@@ -61,6 +61,7 @@ class CalcViewController: UIViewController {
         super.viewDidLoad()
         addThemeGestureRecogniser()
         redecorateView()
+        registerForNotifications()
     }
     
     // MARK: - Gestures
@@ -72,6 +73,7 @@ class CalcViewController: UIViewController {
     }
     
     @objc private func themeGestureRecogniserDidTap(_ gesture: UITapGestureRecognizer) {
+        lcdDisplay.prepareForColorThemeUptade()
         decorateViewWithNextTheme()
     }
     
@@ -253,5 +255,25 @@ class CalcViewController: UIViewController {
     private func refreshLCDDisplay() {
         lcdDisplay.label.text = calculatorEngine.lcdDisplayText
     }
+    
+    // MARK: - Notifications
+    
+    private func registerForNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(self.didReccievePasteNotification(notification:)), name: Notification.Name("IOSBFree.com.Calc.LCDDisplay.pasteNumber"), object: nil )
+    }
+    
+   @objc private func didReccievePasteNotification(notification: Notification) {
+       guard let doubleValue = notification.userInfo?["PasteKey"] as? Double else { return }
+       
+       pasteNumberIntoCalculator(from: Decimal(doubleValue))
+    }
+    
+    // MARK: - Copy & Paste
+    
+    private func pasteNumberIntoCalculator(from decimal: Decimal) {
+        calculatorEngine.pasteInNumber(from: decimal)
+        refreshLCDDisplay()
+    }
+    
 }
 

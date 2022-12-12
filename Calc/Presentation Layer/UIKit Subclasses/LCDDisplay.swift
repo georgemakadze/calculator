@@ -70,8 +70,12 @@ class LCDDisplay: UIView {
         
     }
     
-    // MARK: - UIMenuControll er
+    // MARK: - UIMenuController
+    
     private func showMenu(from gestureRecogniser: UILongPressGestureRecognizer) {
+        
+        becomeFirstResponder()
+        
         let menu = UIMenuController.shared
         guard menu.isMenuVisible == false else { return }
         
@@ -83,6 +87,10 @@ class LCDDisplay: UIView {
         menu.showMenu(from: self, rect: rect)
     }
     
+    private func hideMenu() {
+        UIMenuController.shared.hideMenu(from: self)
+    }
+    
     override var canBecomeFirstResponder: Bool {
         return true
     }
@@ -92,11 +100,20 @@ class LCDDisplay: UIView {
     }
     
     @objc override func copy(_ sender: Any?) {
-        print("Copy")
+        UIPasteboard.general.string = label.text
     }
     
     override func paste(_ sender: Any?) {
-         print("Paste ")
+        guard let numberToPaste = UIPasteboard.general.string?.doubleValue else { return }
+        
+        let userInfo: [AnyHashable: Any] = ["PasteKey": numberToPaste]
+        NotificationCenter.default.post(name: Notification.Name("IOSBFree.com.Calc.LCDDisplay.pasteNumber"), object: nil, userInfo: userInfo)
+    }
+    
+    // MARK: - Color Theme
+    
+    func prepareForColorThemeUptade() {
+        hideMenu()
     }
     
 }
