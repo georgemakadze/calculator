@@ -377,7 +377,7 @@
                     </view>
                     <connections>
                         <outlet property="addButton" destination="pjm-1I-j88" id="JiK-yp-9f7"/>
-                        <outlet property="clerButton" destination="2nG-Bv-Ad6" id="nuU-81-138"/>
+                        <outlet property="clearButton" destination="2nG-Bv-Ad6" id="JOX-7U-mWu"/>
                         <outlet property="decimalButton" destination="NNG-qa-wN0" id="SYb-5t-Iw6"/>
                         <outlet property="divideButton" destination="A3B-bt-f3G" id="NLe-dP-8h2"/>
                         <outlet property="equalsButton" destination="DPD-pj-3Cl" id="gKA-9r-BfV"/>
@@ -385,7 +385,7 @@
                         <outlet property="minusButton" destination="L4O-L4-aga" id="Yzd-gz-nfR"/>
                         <outlet property="multiplyButton" destination="7vy-b3-6aa" id="RP6-wa-2o9"/>
                         <outlet property="negateButton" destination="tSf-jm-nyQ" id="TC6-lk-KtD"/>
-                        <outlet property="persentageButton" destination="IfS-hA-d4e" id="MwE-1w-ciW"/>
+                        <outlet property="percentageButton" destination="IfS-hA-d4e" id="pyu-eT-kRZ"/>
                         <outlet property="pinpadButton0" destination="SCz-8D-Hzo" id="7EW-9Y-3kR"/>
                         <outlet property="pinpadButton1" destination="c3d-L1-ndg" id="te7-O5-16h"/>
                         <outlet property="pinpadButton2" destination="sQE-MD-Q0M" id="e6u-4R-7pL"/>
