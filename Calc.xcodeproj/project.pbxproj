@@ -24,6 +24,8 @@
 		0E76BC6B2941F6CE008F179A /* LCDDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E76BC6A2941F6CD008F179A /* LCDDisplay.swift */; };
 		0E76BC70294798DF008F179A /* String+Numbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E76BC6F294798DF008F179A /* String+Numbers.swift */; };
 		0E76BC722948B0BE008F179A /* UIButton+Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E76BC712948B0BE008F179A /* UIButton+Animations.swift */; };
+		0E76BC742949D0F0008F179A /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E76BC732949D0F0008F179A /* LogViewController.swift */; };
+		0E76BC762949D2FF008F179A /* EquationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E76BC752949D2FF008F179A /* EquationTableViewCell.swift */; };
 		0EBF4CDA29349CF100E2B79B /* CalculatorEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBF4CD929349CF100E2B79B /* CalculatorEngine.swift */; };
 		0EBF4E192924D4A60094FD16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBF4E182924D4A60094FD16 /* AppDelegate.swift */; };
 		0EBF4E1B2924D4A60094FD16 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBF4E1A2924D4A60094FD16 /* SceneDelegate.swift */; };
@@ -72,6 +74,8 @@
 		0E76BC6A2941F6CD008F179A /* LCDDisplay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LCDDisplay.swift; sourceTree = "<group>"; };
 		0E76BC6F294798DF008F179A /* String+Numbers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Numbers.swift"; sourceTree = "<group>"; };
 		0E76BC712948B0BE008F179A /* UIButton+Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Animations.swift"; sourceTree = "<group>"; };
+		0E76BC732949D0F0008F179A /* LogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogViewController.swift; sourceTree = "<group>"; };
+		0E76BC752949D2FF008F179A /* EquationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquationTableViewCell.swift; sourceTree = "<group>"; };
 		0EBF4CD929349CF100E2B79B /* CalculatorEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorEngine.swift; sourceTree = "<group>"; };
 		0EBF4E152924D4A60094FD16 /* Calc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EBF4E182924D4A60094FD16 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -152,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				0E76BC6A2941F6CD008F179A /* LCDDisplay.swift */,
+				0E76BC752949D2FF008F179A /* EquationTableViewCell.swift */,
 			);
 			path = "UIKit Subclasses";
 			sourceTree = "<group>";
@@ -191,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				0EBF4E1C2924D4A60094FD16 /* CalcViewController.swift */,
+				0E76BC732949D0F0008F179A /* LogViewController.swift */,
 			);
 			path = UIViewControllers;
 			sourceTree = "<group>";
@@ -398,11 +404,13 @@
 				0E76BC70294798DF008F179A /* String+Numbers.swift in Sources */,
 				0E76BC67293F8677008F179A /* lightTheme.swift in Sources */,
 				0E76BC62293F8677008F179A /* lightBlueTheme.swift in Sources */,
+				0E76BC762949D2FF008F179A /* EquationTableViewCell.swift in Sources */,
 				0E76BC64293F8677008F179A /* washedOutTheme.swift in Sources */,
 				0E76BC722948B0BE008F179A /* UIButton+Animations.swift in Sources */,
 				0E76BC68293F8677008F179A /* electroTheme.swift in Sources */,
 				0E76BC3A29389ADA008F179A /* String+Prefix.swift in Sources */,
 				0EBF4E492930B3250094FD16 /* CalculatorTheme.swift in Sources */,
+				0E76BC742949D0F0008F179A /* LogViewController.swift in Sources */,
 				0E76BC522939DF18008F179A /* ThemeManager.swift in Sources */,
 				0E76BC61293F8677008F179A /* darkTheme.swift in Sources */,
 				0E76BC54293A22A6008F179A /* DataStoreManager.swift in Sources */,

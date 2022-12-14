@@ -32,6 +32,16 @@ import UIKit
 
 class LCDDisplay: UIView {
     
+    //MARK: - Custom Menu Items
+    
+    private var historyMenuItem: UIMenuItem {
+        return UIMenuItem(title: "View Log", action: #selector(self.displayMathEquationHistory))
+    }
+    
+    @objc private func displayMathEquationHistory() {
+        NotificationCenter.default.post(name: Notification.Name("IOSBFree.com.calc.LCDDisplay.displayHistory"), object: nil)
+    }
+    
     //MARK: - IBOutlets
     
     @IBOutlet var label: UILabel!
@@ -79,6 +89,7 @@ class LCDDisplay: UIView {
         becomeFirstResponder()
         
         let menu = UIMenuController.shared
+        menu.menuItems = [historyMenuItem]
         guard menu.isMenuVisible == false else { return }
         
         let locationOfTouch = gestureRecogniser.location(in: self)
@@ -99,7 +110,7 @@ class LCDDisplay: UIView {
     }
     
     override func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
-        return action == #selector(UIResponderStandardEditActions.copy(_:)) || action == #selector(UIResponderStandardEditActions.paste(_:))
+        return action == #selector(UIResponderStandardEditActions.copy(_:)) || action == #selector(UIResponderStandardEditActions.paste(_:)) || action == #selector(self.displayMathEquationHistory)
     }
     
     @objc override func copy(_ sender: Any?) {
