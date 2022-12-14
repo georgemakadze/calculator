@@ -133,6 +133,19 @@ struct CalculatorEngine {
         
     }
     
+    mutating func pasteInMathEquation(from mathEquation: MathEquation) {
+        guard let result = mathEquation.result else {
+            return
+        }
+        
+        inputController = MathInputController()
+        pasteInNumber(from: result)
+        
+    }
+    
+    
+    
+    //pasteInMathEquation(from: mathEquation)
 }
 
 

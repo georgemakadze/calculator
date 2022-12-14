@@ -281,6 +281,14 @@ class CalcViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(self.didReccievePasteNotification(notification:)), name: Notification.Name("IOSBFree.com.Calc.LCDDisplay.pasteNumber"), object: nil )
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.didReceiveHistoryLogNotification(notification:)), name: Notification.Name("IOSBFree.com.calc.LCDDisplay.displayHistory"), object: nil )
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(didReceivePasteMathEquationNotification(notification:)), name: Notification.Name("IOSBFree.com.Calc.LogViewController.pasteMathEquation"), object: nil )
+    }
+    
+    @objc private func didReceivePasteMathEquationNotification(notification: Notification) {
+        guard let mathEquation = notification.userInfo?["PasteKey"] as? MathEquation else { return }
+        
+        pasteMathEquationIntoCalculator(from: mathEquation)
     }
     
    @objc private func didReccievePasteNotification(notification: Notification) {
@@ -293,6 +301,8 @@ class CalcViewController: UIViewController {
         presentHistoryLogScreen()
     }
     
+    // MARK: - History Log Screen
+    
     private func presentHistoryLogScreen() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         guard let logViewController = storyboard.instantiateViewController(withIdentifier: "LogViewController") as? LogViewController else {
@@ -300,13 +310,20 @@ class CalcViewController: UIViewController {
         }
         
         logViewController.datasource = calculatorEngine.historyLog
-        present(logViewController, animated: true, completion: nil )
+        
+        let navigationController = UINavigationController(rootViewController: logViewController)
+        present(navigationController, animated: true, completion: nil )
     }
     
     // MARK: - Copy & Paste
     
     private func pasteNumberIntoCalculator(from decimal: Decimal) {
         calculatorEngine.pasteInNumber(from: decimal)
+        refreshLCDDisplay()
+    }
+    
+    private func pasteMathEquationIntoCalculator(from mathEquation: MathEquation) {
+        calculatorEngine.pasteInMathEquation(from: mathEquation)
         refreshLCDDisplay()
     }
     
