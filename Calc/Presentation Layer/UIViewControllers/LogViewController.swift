@@ -15,7 +15,7 @@ class LogViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        decorateView()
         setupNavigationBar()
 
     }
@@ -50,10 +50,12 @@ class LogViewController: UITableViewController {
         cell.lhsLabel.text = equation.lhs.formatted()
         cell.rhsLabel.text = equation.generateStringRepresentationOfOperation() + " " + (equation.rhs?.formatted() ?? "")
         cell.resultLabel.text = "= " + (equation.result?.formatted() ?? "")
-
+        cell.selectedBackgroundView = UIView()
+        decorateCell(cell)
         
         return cell
     }
+ 
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
@@ -64,7 +66,30 @@ class LogViewController: UITableViewController {
         dismiss(animated: true, completion: nil)
     }
     
-
-  
-
+    // MARK: - Decorate
+    
+    private func decorateCell(_ cell: EquationTableViewCell) {
+        let theme = ThemeManager.shared.currentTheme
+        cell.backgroundColor = UIColor(hex: theme.backgroundColor)
+        cell.selectedBackgroundView?.backgroundColor = UIColor(hex: theme.operationColor)
+        cell.lhsLabel.textColor = UIColor(hex: theme.displayColor)
+        cell.rhsLabel.textColor = UIColor(hex: theme.displayColor)
+        cell.resultLabel.textColor = UIColor(hex: theme.displayColor)
+        cell.lhsLabel.highlightedTextColor = UIColor(hex: theme.backgroundColor)
+        cell.rhsLabel.highlightedTextColor = UIColor(hex: theme.backgroundColor)
+        cell.resultLabel.highlightedTextColor = UIColor(hex: theme.backgroundColor)
+    }
+    
+    private func decorateView() {
+        let theme = ThemeManager.shared.currentTheme
+        tableView.backgroundColor = UIColor(hex: theme.backgroundColor)
+        tableView.tintColor = UIColor(hex: theme.displayColor)
+        
+        tableView.separatorColor = UIColor(hex: theme.displayColor)
+        switch theme.statusBarStyle {
+        case .light: tableView.indicatorStyle = .white
+        case .dark: tableView.indicatorStyle = .black
+        }
+    }
+    
 }
