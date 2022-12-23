@@ -30,6 +30,12 @@ struct MathInputController {
     private(set) var mathEquation = MathEquation(lhs: .zero)
     private var isEnteringDecimal = false
     
+    // MARK: - Initielise
+    
+    init(from mathInputController: MathInputController) {
+        lhs = mathInputController.result ?? Decimal(0)
+    }
+    
     // MARK: - LCD Display
     
     var lcdDisplayText = ""
@@ -64,6 +70,10 @@ struct MathInputController {
             mathEquation.result = newValue
             lcdDisplayText = formatLCDDisplay(mathEquation.result)
         }
+    }
+    
+    func generatePrintout() -> String {
+        return mathEquation.generatePrintout()
     }
     
     

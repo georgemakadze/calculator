@@ -65,33 +65,37 @@ struct CalculatorEngine {
         inputController.percentagePressed()
     }
     
+    
     // MARK: - Operations
     
     mutating func addPressed() {
         if inputController.isCompleted {
-            let result = inputController.result ?? Decimal(0)
-            inputController = MathInputController()
-            inputController.lhs = result
-            
-        }
+            populateFromResult()
+            }
         
         inputController.addPressed()
     }
     
     mutating func minusPressed() {
-        guard inputController.isCompleted == false else { return }
+        if inputController.isCompleted {
+            populateFromResult()
+            }
         
         inputController.minusPressed()
     }
     
     mutating func multiplyPressed() {
-        guard inputController.isCompleted == false else { return }
+        if inputController.isCompleted {
+            populateFromResult()
+            }
         
         inputController.multiplyPressed()
     }
     
     mutating func dividePressed() {
-        guard inputController.isCompleted == false else { return }
+        if inputController.isCompleted {
+            populateFromResult()
+            }
         
         inputController.dividePressed()
     }
@@ -118,11 +122,16 @@ struct CalculatorEngine {
         
         inputController.numberPressed(number)
     }
+    // MARK: - Populate New Math Input Controller
+    
+    private mutating func populateFromResult() {
+        inputController = MathInputController(from: inputController)
+    }
     
     //MARK: - Debug Console
     
     private func printEquationToDebugConsole() {
-        print("Equation: " + inputController.mathEquation.generatePrintout())
+        print("Equation: " + inputController.generatePrintout())
     }
     
     // MARK: - History Log
