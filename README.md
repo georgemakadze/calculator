@@ -19,4 +19,4 @@ iOS project written fully on Swift to replicate the builtin iOS calculator behav
 ## TODOs
 * Chain the operations
 
- <video src='https://user-images.githubusercontent.com/111285282/208489405-3fe8a5a1-44f4-439c-acf6-e1fd770b346e.mp4' width='200'/>
+ <video src='https://user-images.githubusercontent.com/111285282/209339861-ce2260df-ec6a-46f9-a54d-aab774e1ff72.mp4' width='200'/>
