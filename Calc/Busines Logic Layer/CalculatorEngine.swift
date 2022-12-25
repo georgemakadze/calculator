@@ -54,13 +54,13 @@ struct CalculatorEngine {
     }
     
     mutating func negatePressed() {
-        guard inputController.isCompleted == false else { return }
+        populateFromResultIfNeeded()
         
         inputController.negatePressed()
     }
     
     mutating func percentagePressed() {
-        guard inputController.isCompleted == false else { return }
+        populateFromResultIfNeeded()
         
         inputController.percentagePressed()
     }
@@ -69,53 +69,25 @@ struct CalculatorEngine {
     // MARK: - Operations
     
     mutating func addPressed() {
-        if inputController.isReadyToExecute {
-            executeMathInputController()
-            populateFromResult()
-        }
-        
-        if inputController.isCompleted {
-            populateFromResult()
-            }
+        executeAndPopulateFromResultIfNeeded()
         
         inputController.addPressed()
     }
     
     mutating func minusPressed() {
-        if inputController.isReadyToExecute {
-            executeMathInputController()
-            populateFromResult()
-        }
-        
-        if inputController.isCompleted {
-            populateFromResult()
-            }
+        executeAndPopulateFromResultIfNeeded()
         
         inputController.minusPressed()
     }
     
     mutating func multiplyPressed() {
-        if inputController.isReadyToExecute {
-            executeMathInputController()
-            populateFromResult()
-        }
-        
-        if inputController.isCompleted {
-            populateFromResult()
-            }
+        executeAndPopulateFromResultIfNeeded()
         
         inputController.multiplyPressed()
     }
     
     mutating func dividePressed() {
-        if inputController.isReadyToExecute {
-            executeMathInputController()
-            populateFromResult()
-        }
-        
-        if inputController.isCompleted {
-            populateFromResult()
-            }
+        executeAndPopulateFromResultIfNeeded()
         
         inputController.dividePressed()
     }
@@ -139,6 +111,10 @@ struct CalculatorEngine {
     // MARK: - Number Input
     
     mutating func decimalPressed() {
+        if inputController.isCompleted {
+            inputController = MathInputController()
+            }
+        
         inputController.decimalPressed()
     }
     
@@ -153,6 +129,21 @@ struct CalculatorEngine {
     
     private mutating func populateFromResult() {
         inputController = MathInputController(byPopulatingResultFrom: inputController)
+    }
+    
+    private mutating func populateFromResultIfNeeded() {
+        if inputController.isCompleted {
+            populateFromResult()
+            }
+    }
+    
+    private mutating func executeAndPopulateFromResultIfNeeded() {
+        if inputController.isReadyToExecute {
+            executeMathInputController()
+            populateFromResult()
+        }
+        
+        populateFromResultIfNeeded()
     }
     
     //MARK: - Debug Console
