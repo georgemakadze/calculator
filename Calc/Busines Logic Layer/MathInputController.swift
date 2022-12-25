@@ -32,8 +32,15 @@ struct MathInputController {
     
     // MARK: - Initielise
     
-    init(from mathInputController: MathInputController) {
+    init(byPopulatingResultFrom mathInputController: MathInputController) {
         lhs = mathInputController.result ?? Decimal(0)
+    }
+    
+    init(byPopulatingCalculationFrom mathInputController: MathInputController) {
+        lhs = mathInputController.result ?? Decimal(0)
+        operation = mathInputController.mathEquation.operation
+        rhs = mathInputController.mathEquation.rhs
+        
     }
     
     // MARK: - LCD Display
@@ -41,6 +48,15 @@ struct MathInputController {
     var lcdDisplayText = ""
     
     // MARK: - Equation Wrapper
+    
+    var operation: MathEquation.OperationType? {
+        get {
+            return mathEquation.operation
+        }
+        set {
+            mathEquation.operation = newValue
+        }
+    }
     
     var lhs: Decimal {
         get {
