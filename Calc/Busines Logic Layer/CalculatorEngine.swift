@@ -118,12 +118,15 @@ struct CalculatorEngine {
         inputController.decimalPressed()
     }
     
-    mutating func numberPressed(_ number: Int) {
+    mutating func pinPadPressed(_ number: Int) {
+        guard number >= 0,
+              number <= 9 else { return }
+        
         if inputController.isCompleted {
             inputController = MathInputController()
         }
         
-        inputController.numberPressed(number)
+        inputController.pinPadPressed(number)
     }
     // MARK: - Populate New Math Input Controller
     
