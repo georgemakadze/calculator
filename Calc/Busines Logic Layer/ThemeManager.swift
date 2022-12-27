@@ -15,7 +15,7 @@ class ThemeManager {
     
     // MARK: - Data Storage
     
-    private var dataStore = DataStoreManager(key: "iOSBFree.com.Calc.ThemeManager.ThemeIndex")
+    private var dataStore = DataStoreManager(key: ThemeManager.keys.dataStore)
     
     // MARK: - Themes
     

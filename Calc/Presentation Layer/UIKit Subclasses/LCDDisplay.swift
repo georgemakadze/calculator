@@ -39,7 +39,7 @@ class LCDDisplay: UIView {
     }
     
     @objc private func displayMathEquationHistory() {
-        NotificationCenter.default.post(name: Notification.Name("IOSBFree.com.calc.LCDDisplay.displayHistory"), object: nil)
+        NotificationCenter.default.post(name: Notification.Name(LCDDisplay.keys.historyLogNotification), object: nil)
     }
     
     //MARK: - IBOutlets
@@ -120,8 +120,8 @@ class LCDDisplay: UIView {
     override func paste(_ sender: Any?) {
         guard let numberToPaste = UIPasteboard.general.string?.doubleValue else { return }
         
-        let userInfo: [AnyHashable: Any] = ["PasteKey": numberToPaste]
-        NotificationCenter.default.post(name: Notification.Name("IOSBFree.com.Calc.LCDDisplay.pasteNumber"), object: nil, userInfo: userInfo)
+        let userInfo: [AnyHashable: Any] = [LCDDisplay.keys.pasteNumberKey: numberToPaste]
+        NotificationCenter.default.post(name: Notification.Name(LCDDisplay.keys.pasteNumberNotification), object: nil, userInfo: userInfo)
     }
     
     // MARK: - Color Theme
