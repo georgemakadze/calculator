@@ -42,11 +42,13 @@ class LogViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "EquationTableViewCell", for: indexPath) as? EquationTableViewCell else {
+        guard
+            let cell = tableView.dequeueReusableCell(withIdentifier: "EquationTableViewCell", for: indexPath) as? EquationTableViewCell,
+                let equation = datasource[safe: indexPath.row] else {
             return UITableViewCell()
         }
 
-        let equation = datasource[indexPath.row]
+        
         cell.lhsLabel.text = equation.lhs.formatted()
         cell.rhsLabel.text = equation.generateStringRepresentationOfOperation() + " " + (equation.rhs?.formatted() ?? "")
         cell.resultLabel.text = "= " + (equation.result?.formatted() ?? "")
@@ -58,11 +60,11 @@ class LogViewController: UITableViewController {
  
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let cell = tableView.cellForRow(at: indexPath) as? EquationTableViewCell else {
+        guard let cell = tableView.cellForRow(at: indexPath) as? EquationTableViewCell,
+        let equation = datasource[safe: indexPath.row] else {
             return
         }
         
-        let equation = datasource[indexPath.row]
         let userInfo: [AnyHashable: Any] = [LogViewController.keys.pasteNumberKey: equation]
         NotificationCenter.default.post(name: NSNotification.Name(LogViewController.keys.pasteEquationNotification), object: nil, userInfo: userInfo)
         

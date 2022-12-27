@@ -150,6 +150,10 @@ class CalcViewController: UIViewController {
         button.setTitleColor(UIColor(hex: currentTheme.operationTitleColor), for: .normal)
         button.setTitleColor(UIColor(hex: currentTheme.operationTitleSelectedColor), for: .selected)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 50)
+        
+        if button.isSelected {
+            selectOperationButton(button, true)
+        }
     }
     
     private func decoratePinPadButton(_ button: UIButton, _ usingSlicedImage: Bool = false) {
