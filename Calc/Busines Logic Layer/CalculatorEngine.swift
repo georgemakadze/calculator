@@ -50,12 +50,6 @@ struct CalculatorEngine {
         return inputController.lcdDisplayText
     }
     
-    // MARK: - Initialise
-    
-    init() {
-        restoreFromLastSession()
-    }
-    
     // MARK: - Extra Functions
     
     mutating func clearPressed() {
@@ -125,7 +119,7 @@ struct CalculatorEngine {
     mutating func decimalPressed() {
         if inputController.isCompleted {
             inputController = MathInputController()
-            }
+        }
         
         inputController.decimalPressed()
     }
@@ -149,7 +143,7 @@ struct CalculatorEngine {
     private mutating func populateFromResultIfNeeded() {
         if inputController.isCompleted {
             populateFromResult()
-            }
+        }
     }
     
     private mutating func executeAndPopulateFromResultIfNeeded() {
@@ -201,26 +195,38 @@ struct CalculatorEngine {
     }
     
     private func saveSession() {
+        guard isMathInputControllerSafeToBeSaved() else {
+            deletePreviousSession()
+            return
+        }
+        
         let mathEquation = inputController.mathEquation
         let encoder = JSONEncoder()
         if let encodedEquation = try? encoder.encode(mathEquation) {
             
             dataStore.set(encodedEquation)
         }
-       
+        
     }
     
-    private mutating func restoreFromLastSession() {
+    mutating func restoreFromLastSession() -> Bool {
         guard let encodedEquation = dataStore.getValue() as? Data else {
-            return
+            return false
         }
         
         let decoder = JSONDecoder()
         if let previousEquation = try? decoder.decode(MathEquation.self, from: encodedEquation) {
             inputController = MathInputController(byRestoringFrom: previousEquation)
+            return true
         }
+        return false
+    }
+    
+    private func isMathInputControllerSafeToBeSaved() -> Bool {
+        return !inputController.containsNans
     }
 }
 
+    
 
 

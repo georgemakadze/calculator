@@ -44,7 +44,10 @@ struct MathInputController {
     }
     
     init(byRestoringFrom equation: MathEquation) {
-        mathEquation = equation
+        lhs = equation.lhs
+        operation = equation.operation
+        rhs = equation.rhs
+        result = equation.result
     }
     
     // MARK: - LCD Display
@@ -281,6 +284,10 @@ struct MathInputController {
             return true
         }
         return false
+    }
+    
+    var containsNans: Bool {
+        return lhs.isNaN || (rhs?.isNaN ?? false) || (result?.isNaN ?? false)
     }
     
      // MARK: - Copy & Paste
