@@ -40,16 +40,27 @@ struct CalculatorEngine {
     
     private(set) var historyLog: [MathEquation] = []
     
+    // MARK: - Data Storage
+    
+    private var dataStore = DataStoreManager(key: CalculatorEngine.keys.dataStore)
+    
     // MARK: - LCD Display
     
     var lcdDisplayText: String  {
         return inputController.lcdDisplayText
     }
     
+    // MARK: - Initialise
+    
+    init() {
+        restoreFromLastSession()
+    }
+    
     // MARK: - Extra Functions
     
     mutating func clearPressed() {
         inputController = MathInputController()
+        deletePreviousSession()
         
     }
     
@@ -106,6 +117,7 @@ struct CalculatorEngine {
         inputController.execute()
         historyLog.append(inputController.mathEquation)
         printEquationToDebugConsole()
+        saveSession()
     }
     
     // MARK: - Number Input
@@ -182,9 +194,32 @@ struct CalculatorEngine {
         
     }
     
+    // MARK: - Restoring Session
     
+    private func deletePreviousSession() {
+        dataStore.deleteValue()
+    }
     
-    //pasteInMathEquation(from: mathEquation)
+    private func saveSession() {
+        let mathEquation = inputController.mathEquation
+        let encoder = JSONEncoder()
+        if let encodedEquation = try? encoder.encode(mathEquation) {
+            
+            dataStore.set(encodedEquation)
+        }
+       
+    }
+    
+    private mutating func restoreFromLastSession() {
+        guard let encodedEquation = dataStore.getValue() as? Data else {
+            return
+        }
+        
+        let decoder = JSONDecoder()
+        if let previousEquation = try? decoder.decode(MathEquation.self, from: encodedEquation) {
+            inputController = MathInputController(byRestoringFrom: previousEquation)
+        }
+    }
 }
 
 

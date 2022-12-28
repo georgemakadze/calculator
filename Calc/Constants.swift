@@ -50,3 +50,11 @@ extension ThemeManager {
         static let dataStore = "iOSBFree.com.Calc.ThemeManager.ThemeIndex"
     }
 }
+
+// MARK: - Calculator Engine
+
+extension CalculatorEngine {
+    struct keys {
+        static let dataStore = "iOSBFree.com.Calc.CalculatorEngine.PreviousResult"
+    }
+}

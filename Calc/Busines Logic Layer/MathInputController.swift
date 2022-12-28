@@ -43,6 +43,10 @@ struct MathInputController {
         
     }
     
+    init(byRestoringFrom equation: MathEquation) {
+        mathEquation = equation
+    }
+    
     // MARK: - LCD Display
     
     var lcdDisplayText = ""

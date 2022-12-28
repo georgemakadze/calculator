@@ -62,6 +62,7 @@ class CalcViewController: UIViewController {
         addThemeGestureRecogniser()
         redecorateView()
         registerForNotifications()
+        refreshLCDDisplay()
     }
     
     // MARK: - Gestures
